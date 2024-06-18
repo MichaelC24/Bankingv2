@@ -22,6 +22,15 @@ namespace Bankingv2
 
         private Account acc = new Account("Savings Account");
 
+        public decimal IntRate { get; set; } = .12m;
+
+        public void IntRates(int nbrOfMonths)
+        {
+
+            decimal intrest = acc.Balance * (IntRate / 12) * nbrOfMonths;
+            Deposit(intrest);
+        }
+
         public int AccountId()
         {
             return acc.AccountId;
@@ -53,6 +62,10 @@ namespace Bankingv2
                 savings.Deposit(Amount);
             }
             return true;
+        }
+        public Savings(string description) 
+        {
+            new Account("Savings Account");
         }
     }
 }
