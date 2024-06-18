@@ -6,8 +6,8 @@ namespace Bankingv2
     {
         static void Main(string[] args)
         {
-            Account a1 = new Account();
-            Account a2 = new Account();
+            var a1 = new Savings("Savings1");
+            var a2 = new Savings("Savings2");
 
             Console.WriteLine($"Your balance is {a1.Balance:C} ");
             a1.Deposit(1000);
@@ -17,6 +17,9 @@ namespace Bankingv2
 
             a1.Transfer(100,a2);
             Console.WriteLine($"A2 Balance {a2.Balance:C}");
-        }
+
+            a1.IntRates(1);
+            Console.WriteLine($" Your balance is {a1.Balance : C}");
+      }
     }
 }

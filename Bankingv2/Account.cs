@@ -10,6 +10,7 @@ namespace Bankingv2
 {
     public class Account
     {
+        private static int nextId { get; set; } = 1;
         public int AccountId { get; set; } = 0;
         public string Description { get; set; } = string.Empty;
         public decimal Balance { get; set; } = 0;
@@ -37,7 +38,7 @@ namespace Bankingv2
         //account number needs to be same type as the variable you pass to it
         public bool Transfer(decimal Amount, Account account)
         {
-            var success = Withdraw(Amount);
+            bool success = Withdraw(Amount);
 
             if (success) 
             {
@@ -47,7 +48,11 @@ namespace Bankingv2
             return true;
         }
 
-        
+        public Account(string description)
+        {
+            AccountId = nextId++;
+            Description = description;
+            Balance = 0;
+        }
     }
 }
-
