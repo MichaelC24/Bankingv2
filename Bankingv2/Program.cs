@@ -15,8 +15,12 @@ namespace Bankingv2
             a1.Withdraw(100);
             Console.WriteLine($"Your current balance is {a1.Balance:C}");
 
-            a1.Transfer(100,a2);
+            a1.Transfer(100, a2);
             Console.WriteLine($"A2 Balance {a2.Balance:C}");
+
+            a1.IntRates(1);
+            Console.WriteLine($" Your balance is {a1.Balance: C}");
+        }
         }
     }
 }

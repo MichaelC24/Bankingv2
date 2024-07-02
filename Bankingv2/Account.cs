@@ -27,12 +27,15 @@ namespace Bankingv2
 
         public bool Withdraw(decimal withdraw)
         {
-            if (withdraw <= Balance)
+            try
             {
                 Balance -= withdraw;
                 return true;
-
-            } return false;
+            }
+            catch () {
+               
+            }
+            //} return false;
         }
         //account number needs to be same type as the variable you pass to it
         public bool Transfer(decimal Amount, Account account)
